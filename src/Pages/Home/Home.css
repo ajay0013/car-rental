@@ -1,0 +1,137 @@
+.home--page {
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  width: 100vw;
+}
+
+.home--search {
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 100vw;
+    position: relative;
+  }
+}
+
+.search--container {
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 1%;
+}
+
+.search--home {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  max-width: 80vw;
+  width: 53vw;
+  border-radius: 100px;
+  height: 56px;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 14%);
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  flex: 0 1 auto;
+  margin: 0 auto;
+  padding: 8px;
+  border: 0;
+  width: 100%;
+}
+
+.location {
+  display: flex;
+  flex-direction: column;
+  height: 40px;
+  padding-left: 10px;
+  width: 100%;
+  text-align: left;
+}
+
+.where {
+  margin: 0;
+  color: #121214;
+  font-family: RlBasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 16px;
+  text-transform: none;
+}
+
+.location input {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  border: 0;
+  text-align: start;
+  cursor: pointer;
+}
+
+.from--until {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding-left: 10px;
+  height: 40px;
+}
+
+.from,
+.to {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #c7c7c7;
+  text-align: left;
+  padding-left: 13px;
+  padding-right: 14px;
+
+  p {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 16px;
+    text-transform: none;
+    font-family: RlBasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+  }
+
+  input {
+    border: 0;
+    line-height: 1.5;
+    font-size: 16px;
+    color: rgb(18, 18, 20);
+    margin-bottom: -1px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+}
+
+.search--btn {
+  border: 0;
+  .search--submit {
+    background: #593cfb;
+    border: none;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    display: block;
+    flex-shrink: 0;
+    outline: 0;
+  }
+}
