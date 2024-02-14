@@ -34,6 +34,7 @@
   flex-direction: row;
   align-items: center;
   background-color: #fff;
+  padding: 3px;
   max-width: 80vw;
   width: 53vw;
   border-radius: 100px;
@@ -66,7 +67,7 @@
   margin: 0;
   color: #121214;
   font-family: RlBasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   letter-spacing: 0;
   line-height: 16px;
@@ -102,7 +103,7 @@
 
   p {
     margin: 0;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
     letter-spacing: 0;
     line-height: 16px;
@@ -134,4 +135,96 @@
     flex-shrink: 0;
     outline: 0;
   }
+}
+
+.find--car--text {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  gap: 16px;
+  margin-bottom: 16px;
+  p1 {
+    font-family: RlFreight, HoeflerText-Black, Times New Roman, serif;
+    font-size: 90px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 90px;
+    text-transform: none;
+    color: #121214;
+  }
+
+  p2 {
+    font-family: RlBasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: -0.2px;
+    line-height: 32px;
+    text-transform: none;
+    margin-top: 10px;
+  }
+}
+
+.browse--by--make {
+  /* background-color: #c7c7c7; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.make--components {
+  width: 61vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.make--header {
+  /* background-color: #de3131; */
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 8px;
+
+  p {
+    font-family: RlBasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: -0.2px;
+    line-height: 28px;
+    text-transform: none;
+    color: #121214;
+  }
+}
+
+.make--btns{
+  display:flex;
+  flex-direction: row;
+
+  .make--left, .make--right{
+    height: 40px;
+    width: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.make--left:active, .make--right:active{
+  background-color: rgba(223, 223, 223, 0.704);
+  border-radius: 10px;
+}
+
+.make--body{
+  background-color: red;
+  width: 100%;
+  align-items: center;
+  
 }
