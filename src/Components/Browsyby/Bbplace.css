@@ -1,0 +1,62 @@
+.bbplace {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.15s ease-in-out;
+  width: 156px;
+  height: 188px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px 0 rgb(35 31 32 / 20%), 0 0 1px 0 rgb(35 31 32 / 10%);
+  color: #231f20;
+  flex: 1 0 auto;
+  cursor: pointer;
+  margin-right: 17px;
+  text-decoration: none;
+  overflow: hidden;
+  
+  .car--image {
+    height: 120px;
+    width: 120px;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+  
+    .place--img--1,
+    .place--img--2 {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      object-fit: cover;
+    }
+  
+    .place--img--2{
+      display: none;
+      z-index: 1;
+    }
+  }
+}
+
+
+.place--name {
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: RlBasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.bbplace:hover {
+  box-shadow: 0 8px 16px 0 rgb(35 31 32 / 10%), 0 0 3px 0 rgb(35 31 32 / 5%);
+  color: #593cfb;
+  .place--img--2{
+    display: block;
+    }
+
+    .place--img--1{
+        display: none;
+    }
+}

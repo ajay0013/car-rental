@@ -5,6 +5,7 @@
   overflow-x: hidden;
   scroll-behavior: smooth;
   width: 100vw;
+  /* background-color: rgb(255, 255, 25); */
 }
 
 .home--search {
@@ -223,8 +224,28 @@
 }
 
 .make--body{
-  background-color: red;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  flex-wrap: nowrap;
+  margin-left: 18px;
   width: 100%;
   align-items: center;
+  text-decoration: none;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  border-radius: 18px;
+  box-shadow: inset 0px 0px 15px 2px rgba(0,0,0,0.1);
+
+  -webkit-scrollbar{
+    display: none;
+  }
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   
+}
+
+.make--body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }

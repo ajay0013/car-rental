@@ -5,8 +5,6 @@ import Home from './Pages/Home/Home';
 
 import Footer from './Components/Footer/Footer';
 
-import Bbmake from './Components/Browsyby/Bbmake'
-
 function App() {
 
   return (
@@ -14,7 +12,7 @@ function App() {
       <Navbar/>
       <Home/>
 
-      <Bbmake/>
+      {/* <Bbmake/> */}
 
       <Footer/>
     </div>

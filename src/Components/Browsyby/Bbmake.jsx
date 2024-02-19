@@ -1,8 +1,15 @@
 import React from "react";
 import "./Bbmake.css";
 
-export default function Bbmake() {
+export default function Bbmake(props) {
     return(
-        <>asdfghjkl</>
+        <a className= "bbmake" href={props.link}>
+            <div className="car--image">
+                <img src={props.image} alt="car ki image"/>
+            </div>
+            <div className="car--name">
+                <p>{props.name}</p>
+            </div>
+        </a>
     )
 }
