@@ -12,8 +12,6 @@ function App() {
       <Navbar/>
       <Home/>
 
-      {/* <Bbmake/> */}
-
       <Footer/>
     </div>
   );

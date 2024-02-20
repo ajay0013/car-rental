@@ -122,6 +122,13 @@
   }
 }
 
+input:focus{
+  outline: none;
+  placeholder{
+    display: none;
+  }
+}
+
 .search--btn {
   border: 0;
   .search--submit {
