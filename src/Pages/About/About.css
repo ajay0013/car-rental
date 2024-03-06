@@ -1,0 +1,235 @@
+.about {
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  width: 100vw;
+  color: #121214;
+  margin: 0;
+  padding: 0;
+  font-family: RlBasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+}
+
+.abt-turo {
+  width: 100vw;
+  padding-left: 17%;
+
+  display: flex;
+  flex-direction: row;
+  margin-top: 100px;
+  gap: 5%;
+
+  .car-img {
+    width: 548px;
+    height: 309px;
+    border-radius: 5px;
+
+    -webkit-box-shadow: 140px 30px 2px 0px #faf4fe;
+    box-shadow: 140px 35px 2px 0px #faf4fe;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .text {
+    margin-right: auto;
+    width: 273px;
+    h1 {
+      font-family: RlFreight, HoeflerText-Black, Times New Roman, serif;
+      font-size: 68px;
+      font-weight: 900;
+      line-height: 72px;
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+  }
+}
+
+.find-drive {
+  width: 100vw;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  margin-top: 100px;
+
+  .fd1 {
+    width: 680px;
+    margin: 0;
+
+    text-align: left;
+    h2 {
+      font-size: 51px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      line-height: 25px;
+      font-family: RlFreight, HoeflerText-Black, Times New Roman, serif;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 400;
+      font-family: RlFreight, Avenir, Helvetica Neue, Helvetica, sans-serif;
+    }
+  }
+}
+
+.plan-trip {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+
+  .pttext {
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+    padding: 15px;
+
+    p1 {
+      font-size: 27px;
+      font-weight: 500;
+      padding: 5px;
+      font-family: Rubik, sans-serif;
+    }
+    p2 {
+      font-size: 40px;
+      font-weight: 900;
+      padding: 10px;
+      font-family: Rubik, sans-serif;
+    }
+  }
+
+  .pln-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 70vw;
+    margin-top: 70px;
+
+    img {
+      height: 83px;
+      width: 83px;
+    }
+
+    .pln {
+      display: flex;
+      flex-direction: column;
+
+      .pln-label {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        padding: 15px;
+        padding-left: 0;
+
+        p1 {
+          font-size: 42px;
+          font-weight: 600;
+        }
+        p2 {
+          font-size: 20px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+.team {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 120px;
+
+  /* background-color: lightblue; */
+
+  .team-contents {
+    display: flex;
+    flex-direction: row;
+    width: 60vw;
+    /* background-color: lightcoral; */
+  }
+
+  .meet {
+    display: flex;
+    flex-direction: column;
+    p1 {
+      font-size: 37px;
+      font-weight: 700;
+      line-height: 55px;
+    }
+    p2 {
+      font-size: 19px;
+      margin-top: 25px;
+      width: 65%;
+      min-width: 45%;
+    }
+
+    button {
+      background-color: #470ab4;
+      border: 0;
+      width: fit-content;
+      height: 50px;
+      padding: 0 25px;
+      margin: 18px 0;
+
+      a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.touch {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+  margin-bottom: -10px;
+  padding: 45px 0;
+  color: #faf4fe;
+
+  .touch-conntents {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    width: 61vw;
+    gap: 180px;
+
+    p {
+      align-items: center;
+      font-size: 30px;
+      font-weight: 600;
+    }
+  }
+
+  .phicn {
+    display: flex;
+    align-items: center;
+    color: #ff4d30;
+    p {
+      /* color: rgb(255, 55, 9); */
+      font-size: 31px;
+      font-weight: 700;
+      width: fit-content;
+      padding-right: 60px;
+    }
+    flex-direction: row;
+  }
+}

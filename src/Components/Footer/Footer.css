@@ -5,7 +5,11 @@
     font-size: 14px;
     width: 100vw;
     background-color: #f4f4f4;
-    margin-top: 25px;
+    /* margin-top: 25px; */
+    width: 100vw;
+    overflow-x: hidden;
+
+    padding-bottom: 25px;
 
     h2{
         font-size: 16px;
@@ -33,6 +37,9 @@ li:hover{
     font-weight: 500;
     width: 57vw;
     padding-top: 40px;
+    margin-right: 11%;
+    align-items: center;
+    justify-content: center;
 }
 
 .sec-1, .sec-2{
@@ -109,6 +116,20 @@ li:hover{
             object-fit: cover;
             width: 130px;
             height: 50px;
+        }
+    }
+
+    .language{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-left: 13%;
+        gap: 10px;
+
+        p{
+            font-weight: bold;
+            font-size: 12px;
+            color: #121214;
         }
     }
 
