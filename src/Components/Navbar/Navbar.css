@@ -119,6 +119,7 @@
     span {
       transition: 0.2s all ease;
       color: #593cfb;
+      text-decoration: underline;
     }
   }
 }

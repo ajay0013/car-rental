@@ -209,7 +209,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-around;
-    width: 61vw;
+    width: 62vw;
     gap: 180px;
 
     p {
@@ -223,6 +223,7 @@
     display: flex;
     align-items: center;
     color: #ff4d30;
+    gap: 15px;
     p {
       /* color: rgb(255, 55, 9); */
       font-size: 31px;
@@ -232,4 +233,9 @@
     }
     flex-direction: row;
   }
+}
+
+.phicn p:hover{
+  text-decoration: underline;
+  cursor: pointer;
 }

@@ -1,0 +1,14 @@
+.carsShow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-behavior: smooth;
+}
+
+.carsContent{
+    width: 70vw;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    flex-wrap: wrap;
+}

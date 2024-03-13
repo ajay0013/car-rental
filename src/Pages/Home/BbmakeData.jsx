@@ -46,9 +46,15 @@ const description = [
   },
   {
     id: "7",
-    link: "Car6",
+    link: "Car7",
     image: Bugatti,
     name: "Bugatti",
+  },
+  {
+    id: "8",
+    link: "Car8",
+    image: Jeep,
+    name: "Jeep",
   }
 ];
 

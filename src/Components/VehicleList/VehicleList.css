@@ -1,0 +1,262 @@
+.car-card{
+  overflow: hidden;
+  color: #121214;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: fit-content;
+  background-color: rgb(245, 248, 255);
+  margin: 10px;
+  padding: 0.5rem;
+  border-radius: 25px;
+  transition: 0.2s ease-in-out;
+}
+
+
+.card-content{
+  display: flex;
+  flex-direction: column;
+  transition: 0.2s ease-in-out;
+  /* align-items: start; */
+  justify-content: left;
+}
+
+.car-name{
+  transition: 0.2s ease-in-out;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.rent{
+  span{
+    display: flex;
+    flex-direction: row;
+    
+    p1{
+      font-size: 25px;
+      font-weight: 600;
+      
+    }
+    p2{
+      margin-left: 5px;
+      margin-top: auto;
+    }
+  }
+}
+
+.car-image{
+  margin: 25px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  img{
+    width: 300px;
+  }
+}
+
+.mfeature{
+  transition: 0.2s ease-in-out;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  width: 90%;
+  margin-top: 15px;
+  
+  .gear, .drive, .mileage{
+    transition: 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    
+    p{
+      margin: 5px;
+    }
+  }
+}
+
+
+.view-more{
+  transition: display 0.2s ease-in-out;
+  display: none;
+  width: 90%;
+  align-items: center;
+  margin: auto;
+  margin-top: 15px;
+  
+  button{
+    transition: display 0.2s ease-in-out;
+    padding: 6px;
+    width: 100%;
+    border: 0;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 23px;
+    background-color: rgba(28, 89, 249);
+    text-align: center;
+    align-items: center;
+    
+    p1{
+      color: aliceblue;
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+}
+.car-card:hover{
+  transition: 0.2s ease-in-out;
+  background-color: #fff;
+  box-shadow: 0px 0px 17px -3px rgba(0,0,0,0.2);
+
+  .mfeature{
+    transition: 0.2s ease-in-out;
+    display: none;
+  }
+
+  .view-more{
+    transition: 0.2s ease-in-out;
+    display: block;
+
+    button{
+      /* pointer-events: none; */
+    }
+  }
+}
+
+
+dialog{
+  z-index: 10;
+  position: relative;
+  background-color: red;
+}
+
+.dikh{
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.25);
+}
+
+
+
+
+.details{
+  inset: 0;
+  overflow-y: auto;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  flex-wrap: wrap;
+}
+
+.details-content{
+  /* pointer-events: none; */
+  position: fixed;
+  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.full-details{
+  max-width: 512px;
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+  overflow-y: scroll;
+  margin-top: 10px;
+  background-color: whitesmoke;
+  border-radius: 1rem;
+}
+
+.full-contents{
+  width: 100%;
+  display: flex;
+  padding: 3px;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+
+.close{
+  /* align-items: end; */
+  display: flex;
+  justify-content: right;
+  padding-top: 5px;
+  margin-right: 5px;
+  width: 100%;
+  button{
+    border-radius: 50%;
+    background: none;
+    padding: 5px;
+    top: 2;
+    margin-right: 7px;
+    margin-top: 4px;
+    right: 5;
+    border: 0;
+    img{
+      width: 13px;
+    }
+  }
+}
+
+.car-1, .car-234{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  img{
+    width: 60%;
+    border-radius: 12px;
+  }
+}
+
+.car-234{
+  width: 70%;
+  padding-top: 13px;
+  justify-content: space-between;
+  img{
+    width: 28%;
+  }
+}
+
+
+.fname{
+  display: flex;
+  width: 90%;
+  padding-top: 10px;
+  /* justify-content: start; */
+  text-align: left;
+
+  p{
+    font-weight: 600;
+    font-size: 20px;
+  }
+}
+
+#specs{
+  width: 90%;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+
+  p1{
+    color: rgb(120, 120, 120);
+  }
+  p2{
+    font-weight: 600;
+  }
+}
