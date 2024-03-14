@@ -5,33 +5,31 @@ import { useState } from "react";
 
 import { Dialog, Transition } from "@headlessui/react";
 
-import deflt from "../../Assets/Lamborghini.jpg";
+import vc from "../../Assets/vcfront.png"
 import close from "../../Assets/close.png";
 
 
-
 export default function VehicleList(props) {
-  // const rent = calculateRent(props.city_mpg, props.year);
+  const rent = calculateRent(props.city_mpg, props.year);
   const[isOpen, setIsOpen] = useState(false);
-  const[modal, toggleModal] = useState(false);
 
 
   return (
     <div className="car-card">
       <div className="card-content">
         <div className="car-name">
-          <p>Toyota Corolla</p>
+          <p>{props.make}</p> <p>{props.model}</p>
         </div>
 
         <div className="rent">
           <span>
-            <p1>$150 </p1>
+            <p1>${rent} </p1>
             <p2>/day</p2>
           </span>
         </div>
 
         <div className="car-image">
-          <img src={deflt} alt="vehicle list"/>
+          <img src={vc} alt="vehicle list"/>
         </div>
 
         <div className="mfeature">
@@ -49,7 +47,7 @@ export default function VehicleList(props) {
                 fill="#5D5FC0"
               />
             </svg>
-            <p>Automatic</p>
+            {props.transmission === "a" ? <p>Automatic</p> : <p>Manual</p>}
           </div>
           <div className="drive">
             <svg
@@ -63,7 +61,7 @@ export default function VehicleList(props) {
                 d="M320 0H192V41.3c-14.9 4.4-29.1 10.4-42.6 17.6L120.2 29.7 29.7 120.2l29.2 29.2c-7.3 13.4-13.2 27.7-17.6 42.6H0V320H41.3c4.4 14.9 10.4 29.1 17.6 42.6L29.7 391.8l90.5 90.5 29.2-29.2c13.4 7.3 27.7 13.2 42.6 17.6V512H320V470.7c14.9-4.4 29.1-10.4 42.6-17.6l29.2 29.2 90.5-90.5-29.2-29.2c7.3-13.4 13.2-27.7 17.6-42.6H512V192H470.7c-4.4-14.9-10.4-29.1-17.6-42.6l29.2-29.2L391.8 29.7 362.6 58.9c-13.4-7.3-27.7-13.2-42.6-17.6V0zM256 128a128 128 0 1 1 0 256 128 128 0 1 1 0-256zm0 80a24 24 0 1 0 0-48 24 24 0 1 0 0 48zm-61.1 2.9a24 24 0 1 0 -14.8 45.7 24 24 0 1 0 14.8-45.7zm106.7 30.2a24 24 0 1 0 45.7-14.8 24 24 0 1 0 -45.7 14.8zm-22.7 87.2a24 24 0 1 0 38.8-28.2 24 24 0 1 0 -38.8 28.2zm-51.1-33.5a24 24 0 1 0 -28.2 38.8 24 24 0 1 0 28.2-38.8z"
               />
             </svg>
-            <p>AWD</p>
+            <p>{props.drive}</p>
           </div>
           <div className="mileage">
             <svg
@@ -78,7 +76,7 @@ export default function VehicleList(props) {
                 fill="#47AE58"
               />
             </svg>
-            <p>21 MPG</p>
+            <p>{props.city_mpg} MPG</p>
           </div>
         </div>
 
@@ -118,7 +116,7 @@ export default function VehicleList(props) {
           </button>
         </div>
 
-        <CarDetails isOpen={isOpen}  closeModal={() => setIsOpen(false)} />
+        <CarDetails props={props} isOpen={isOpen}  closeModal={() => setIsOpen(false)} />
         
       </div>
     </div>
@@ -164,64 +162,64 @@ const CarDetails = ({props, isOpen, closeModal}) => {
                                     </button>
                                 </div>
                                 <div className="car-1">
-                                    <img src={deflt} alt="lambi" />
+                                    <img src={vc} alt="lambi" />
                                 </div>
                                 <div className="car-234">
-                                    <img src={deflt} alt="choti"/>
-                                    <img src={deflt} alt="choti"/>
-                                    <img src={deflt} alt="choti"/>
+                                    <img src={vc} alt="choti"/>
+                                    <img src={vc} alt="choti"/>
+                                    <img src={vc} alt="choti"/>
                                 </div>
                                 <div className="fname">
-                                    <p>Tooyota Corolla</p>
+                                    <p>{props.make} {props.model}</p>
                                 </div>
 
                                 <div className="cimpg" id="specs">
                                     <p1>City Mpg</p1>
-                                    <p2>21</p2>
+                                    <p2>{props.city_mpg}</p2>
                                 </div>
                                 <div className="class" id="specs">
                                     <p1>Class</p1>
-                                    <p2>sedan car</p2>
+                                    <p2>{props.class}</p2>
                                 </div>
                                 <div className="compg" id="specs">
                                     <p1>Combination Mpg</p1>
-                                    <p2>21</p2>
+                                    <p2>{props.combination_mpg}</p2>
                                 </div>
                                 <div className="cylinders" id="specs">
                                     <p1>Cylinders</p1>
-                                    <p2>4</p2>
+                                    <p2>{props.cylinders}</p2>
                                 </div>
                                 <div className="displace" id="specs">
                                     <p1>Displacemnet</p1>
-                                    <p2>2500</p2>
+                                    <p2>{props.displacement}</p2>
                                 </div>
                                 <div className="drive" id="specs">
                                     <p1>Drive</p1>
-                                    <p2>awd</p2>
+                                    {props.drive === "awd" ? <p2>AWD</p2> : <p2>RWD</p2>}
                                 </div>
                                 <div className="fuel" id="specs">
                                     <p1>Fuel Type</p1>
-                                    <p2>petrol</p2>
+                                    <p2>{props.fuel_type}</p2>
                                 </div>
                                 <div className="himpg" id="specs">
                                     <p1>Highway Mpg</p1>
-                                    <p2>21</p2>
+                                    <p2>{props.highway_mpg}</p2>
                                 </div>
                                 <div className="make" id="specs">
                                     <p1>Make</p1>
-                                    <p2>toyota</p2>
+                                    <p2>{props.make}</p2>
                                 </div>
                                 <div className="model" id="specs">
                                     <p1>Model</p1>
-                                    <p2>corolla</p2>
+                                    <p2>{props.model}</p2>
                                 </div>
                                 <div className="trans" id="specs">
                                     <p1>Transmission</p1>
-                                    <p2>automatic</p2>
+                                    {props.transmission === "a" ? <p2>Automatic</p2> : <p2>Manual</p2>}
                                 </div>
                                 <div className="year" id="specs">
                                     <p1>Year</p1>
-                                    <p2>1999</p2>
+                                    <p2>{props.year}</p2>
                                 </div>
 
                             </div>

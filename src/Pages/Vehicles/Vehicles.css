@@ -1,14 +1,111 @@
-.carsShow{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    scroll-behavior: smooth;
+.carsShow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-behavior: smooth;
 }
 
-.carsContent{
-    width: 70vw;
-    display: flex;
-    align-items: center;
-    margin: auto;
-    flex-wrap: wrap;
+.carsContent {
+  width: 80vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: lightcoral; */
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.carsContent:last-child {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.allvehicles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3vh;
+  margin-bottom: 80px;
+}
+
+.avcontent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.headings {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: start; */
+  text-align: left;
+  width: 100%;
+
+  p1 {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 40px;
+    padding: 10px;
+  }
+
+  p2 {
+    padding: 10px;
+    padding-top: 0;
+    font-size: 18px;
+  }
+}
+
+.search-filters {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 95%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  gap: 1rem;
+  margin: 0;
+}
+
+.filters {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-right: 15px;
+}
+
+.company,
+.model,
+.fyear,
+.fprice {
+  background-color: #f9f9f9;
+}
+
+.the-end {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+
+  img {
+    width: 100px;
+  }
+
+  p1 {
+    font-size: 28px;
+    padding: 15px;
+    font-weight: 600;
+  }
+  p2 {
+    font-size: 18px;
+  }
 }
