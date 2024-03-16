@@ -1,0 +1,100 @@
+.contact {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.contact-contents {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+}
+
+#nu::-webkit-outer-spin-button,
+#nu::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.chead {
+  width: 90%;
+  display: flex;
+  text-align: left;
+
+  p {
+    font-size: 40px;
+    font-weight: 700;
+  }
+}
+
+.cform {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  padding: 20px;
+}
+
+.focontent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  gap: 18px;
+}
+
+.ipt {
+  height: 40px;
+  width: 100%;
+  font-size: 16px;
+  padding: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 10px;
+  border: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background: rgba(199, 199, 199, 0.53);
+  border-radius: 16px;
+  box-shadow: 0 1px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(7.4px);
+  -webkit-backdrop-filter: blur(7.4px);
+  border: 1px solid rgba(199, 199, 199, 0.9);
+}
+
+#ipt1 {
+  height: 180px;
+  padding-top: 10px;
+}
+
+.ipt:focus {
+  border: none;
+  outline: none;
+}
+
+.fsub {
+  width: 37%;
+  height: 55px;
+  border-radius: 8px;
+  border: 0;
+  background-color: #593cfb;
+  color: white;
+  font-size: 22px;
+  font-weight: 650;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.fsub:hover {
+  background-color: #470ab4;
+  cursor: pointer;
+}

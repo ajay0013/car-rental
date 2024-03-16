@@ -1,4 +1,6 @@
 import React from "react";
+import { Link, Router } from "react-router-dom";
+import Home from "../../Pages/Home/Home";
 import "./Navbar.css";
 
 export default function Navbar() {
@@ -33,6 +35,7 @@ export default function Navbar() {
           </a>
         </div>
 
+        
         <div className="navbar--trg">
           <div className="navbar--buttons">
             <button className="nav-opt">

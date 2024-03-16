@@ -52,7 +52,7 @@
   margin: 0 auto;
   padding: 8px;
   border: 0;
-  width: 100%;
+  width: 100% !important;
 }
 
 .location {
