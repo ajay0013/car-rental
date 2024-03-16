@@ -41,14 +41,16 @@
   font-size: 13px;
   padding: 0 10px;
   padding-top: 6px;
+  padding-bottom: 22px;
   border: 1px solid #414143;
   color: #414143;
-  height: 23px;
+  height: 31px;
   margin: 0 12px;
   text-align: center;
   align-items: center;
   text-decoration: none;
   text-decoration-line: none;
+  background: none;
 }
 
 .host:hover {
@@ -115,11 +117,10 @@
 .nav-opt:hover {
   cursor: pointer;
 
-  a {
+  
     span {
       transition: 0.2s all ease;
       color: #593cfb;
       text-decoration: underline;
     }
-  }
 }

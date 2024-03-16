@@ -1,10 +1,14 @@
 import React from "react";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./Team.css";
-
 
 import employees from "./EmployeesData";
 
 export default function Team() {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <div className="team">
       <div className="team-content">
@@ -31,9 +35,11 @@ export default function Team() {
               </div>
 
               <div className="hjoin">
+                <Link to="/contact">
                 <button>
-                  <a href="">See all positions</a>
+                  <p>See all positions</p>
                 </button>
+                </Link>
               </div>
               </div>
           </div>
@@ -59,9 +65,6 @@ function teamCards(employees) {
             <p>{employees.title}</p>
           </div>
         </div>
-
-
-
       </div>
     </div>
   );

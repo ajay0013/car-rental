@@ -295,7 +295,7 @@ input:focus{
     }
   }
 
-  a {
+  p1{
     font-size: 28px;
     text-decoration: none;
     color: #593cfb;
@@ -304,7 +304,7 @@ input:focus{
     text-align: center;
   }
 
-  p {
+  p2{
     color: #121214;
     font-size: 16px;
     margin-top: 8px;
@@ -329,6 +329,6 @@ input:focus{
   margin-top: 10%;
 }
 
-.chtext a:hover {
+.chtext p:hover {
   text-decoration: underline;
 }

@@ -14,7 +14,6 @@
 .abt-turo {
   width: 100vw;
   padding-left: 17%;
-
   display: flex;
   flex-direction: row;
   margin-top: 100px;
@@ -24,7 +23,6 @@
     width: 548px;
     height: 309px;
     border-radius: 5px;
-
     -webkit-box-shadow: 140px 30px 2px 0px #faf4fe;
     box-shadow: 140px 35px 2px 0px #faf4fe;
 
@@ -152,13 +150,10 @@
   align-items: center;
   margin-top: 120px;
 
-  /* background-color: lightblue; */
-
   .team-contents {
     display: flex;
     flex-direction: row;
     width: 60vw;
-    /* background-color: lightcoral; */
   }
 
   .meet {
@@ -177,21 +172,37 @@
     }
 
     button {
-      background-color: #470ab4;
+      background-color: #593cfb;
       border: 0;
       width: fit-content;
+      border-radius: 5px;
       height: 50px;
       padding: 0 25px;
       margin: 18px 0;
+      transition: all 0.3s ease-out;
+      text-align: center;
+      align-items: center;
+      display: flex;
+      justify-content: center;
 
-      a {
-        text-decoration: none;
+      p {
+        text-decoration: none !important;
         color: #ffffff;
         font-size: 18px;
         font-weight: 600;
       }
     }
+
+    button:hover{
+      text-decoration: none;
+      background-color: #470ab4;
+      cursor: pointer;
+    }
   }
+}
+
+.ghgh{
+  text-decoration: none;
 }
 
 .touch {
@@ -225,7 +236,6 @@
     color: #ff4d30;
     gap: 15px;
     p {
-      /* color: rgb(255, 55, 9); */
       font-size: 31px;
       font-weight: 700;
       width: fit-content;

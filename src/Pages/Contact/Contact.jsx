@@ -1,7 +1,13 @@
 import React from "react";
+import { useEffect } from "react";
 import "./Contact.css";
 
 export default function Contact() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+  
   return (
     <div className="contact">
       <div className="contact-contents">

@@ -12,6 +12,9 @@ import VehicleList from "../../Components/VehicleList/VehicleList";
 import end from "../../Assets/the-end.png";
 
 export default function Vehicles(carData) {
+  useEffect(() => {
+    window.scrollTo(1000, 1000)
+  }, [])
     const [carLoading, setCarLoading] = useState(false);
     const [carError, setCarError] = useState();
     const [allCars, setAllCars] = useState([]);

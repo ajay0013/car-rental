@@ -1,9 +1,10 @@
 import React from "react";
 import { Link, Router } from "react-router-dom";
-import Home from "../../Pages/Home/Home";
 import "./Navbar.css";
 
 export default function Navbar() {
+
+  const link = [{link:"./Random"}]
   return (
     <header className="navbar">
       <div className="navbar--contents">
@@ -35,45 +36,50 @@ export default function Navbar() {
           </a>
         </div>
 
-        
+
         <div className="navbar--trg">
           <div className="navbar--buttons">
+
+              <Link to="/home">
             <button className="nav-opt">
-              <a href="">
                 <span>Home</span>
-              </a>
             </button>
+                </Link>
 
+                <Link to="/about">
             <button className="nav-opt">
-              <a href="">
                 <span>About</span>
-              </a>
             </button>
+                </Link>
 
+                <Link to="/vehicles">
             <button className="nav-opt">
-              <a href="">
                 <span>Vehicles</span>
-              </a>
             </button>
+                </Link>
 
+                <Link to="/team">
             <button className="nav-opt">
-              <a href="">
-                <span>Our Team</span>
-              </a>
+                <span>Our team</span>
             </button>
+                </Link>
 
+                <Link to="/contact">
             <button className="nav-opt">
-              <a href="">
-                <span>Contact Us</span>
-              </a>
+                <span>Contact us</span>
             </button>
+                </Link>
+
+
           </div>
         </div>
 
         <div className="navbar--options">
-          <a class="host" href="/">
+          <Link to="/contact">
+          <button className="host" href="/">
             Become a host
-          </a>
+          </button>
+          </Link>
 
           <button className="nav--dropdown">
             <div className="dropdown--btns">

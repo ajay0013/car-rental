@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./About.css";
 
 import mall from "../../Assets/mall.png";
@@ -100,9 +101,12 @@ export default function About() {
                 get to know the leadership team pioneering the way to put the
                 world's 1.5 billion cars to better use.
               </p2>
+
+              <Link to="/team" className="ghgh">
               <button>
-                <a href="">Meet the team</a>
+                <p>Meet the team</p>
               </button>
+              </Link>
             </div>
 
             <div className="3cars">

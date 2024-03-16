@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useRef } from "react";
 import "./Home.css";
 import homeOne from "../../Assets/homeOne.jpg";
@@ -51,7 +52,9 @@ export default function Home() {
               </div>
 
               <div className="search--btn">
+                <Link to="/vehicles">
                 <button className="search--submit"></button>
+                </Link>
               </div>
             </form>
           </div>
@@ -298,20 +301,24 @@ export default function Home() {
         <div className="contents">
           <div className="book--car">
             <div className="chtext">
-              <a href="">Book a car &gt;</a>
-              <p>
+              <Link to="/vehicles">
+              <p1>Book a car &gt;</p1>
+              </Link>
+              <p2>
                 Down the street or across the country, find the perfect vehicle
                 for your next adventure.
-              </p>
+              </p2>
             </div>
           </div>
           <div className="become--host">
             <div className="chtext">
-              <a href="">Become a host &gt;</a>
-              <p>
+              <Link to="/contact">
+              <p1>Become a host &gt;</p1>
+              </Link>
+              <p2>
                 Accelerate your entrepreneurship and start building a small car
                 sharing business on Turo.
-              </p>
+              </p2>
             </div>
           </div>
         </div>
