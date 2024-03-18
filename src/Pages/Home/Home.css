@@ -1,10 +1,19 @@
-@media (max-width: 1245px){
-  .searchee{
+@media (max-width: 1100px) {
+  .find--car--text {
+    gap: 0;
+    p1 {
+      font-size: 70px;
+    }
+    p2 {
+      font-size: 20px;
+    }
+  }
+  .searchee {
     display: flex;
     flex-direction: column;
     gap: 10px;
   }
-  .from--until{
+  .from--until {
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -12,66 +21,110 @@
     height: 105px;
     overflow: hidden;
     gap: 15px;
-    
   }
-  .from, .to{
+  .from,
+  .to {
     padding-left: 6px;
     border-bottom: 2px solid #c7c7c7;
   }
-  .location{
+  .location {
     border-bottom: 1px solid #c7c7c7;
     border-left: 0;
     padding: 0;
   }
-  .search--home{
+  .search--home {
     border-radius: 10px;
+    width: 100%;
   }
 
-  .search--btn{
+  .search--btn {
     width: 80%;
     height: 40px;
     overflow: hidden;
     border-radius: 7px;
   }
 
-    .search--submit{
-      scale: 300;
-    }
+  .search--submit {
+    scale: 300;
+  }
 
+  .browse--by--make {
+    margin-bottom: 18px;
+  }
+
+  .book--car,
+  .become--host {
+    width: 185px;
+    margin-left: 0;
+  }
+
+  .bg {
+    opacity: 0;
+  }
+
+  .car--host {
+    border-radius: 8px;
+    background-color: #f0f0f0;
+  }
 }
 
-@media(min-width: 1245px){
-  
-  .search--submit{
+@media (min-width: 1100px) {
+  .find--car--text {
+    gap: 16px;
+    p1 {
+      font-size: 90px;
+    }
+    p2 {
+      font-size: 32px;
+    }
+  }
+
+  .search--submit {
     height: 40px;
     width: 40px;
     scale: 1;
   }
-  .searchee{
+  .searchee {
     flex-direction: row;
   }
-  
-  .from--until{
+
+  .from--until {
     padding-left: 10px;
     display: flex;
     flex-direction: row;
     height: 40px;
-    
   }
-  .from, .to{
+  .from,
+  .to {
     border-bottom: 0;
     border-left: 1px solid #c7c7c7;
     padding-left: 13px;
-    
   }
 
-  .search--home{
+  .search--home {
     border-radius: 100px;
     border: 0;
+    width: fit-content;
+  }
+
+  .browse--by--make {
+    margin-bottom: 60px;
+  }
+
+  .book--car,
+  .become--host {
+    width: 250px;
+  }
+  .book--car {
+    margin-left: -100%;
+  }
+  .become--host {
+    margin-left: 80%;
+  }
+  .bg {
+    opacity: 1;
   }
 }
-
-
 
 .home--page {
   -webkit-font-smoothing: antialiased;
@@ -81,13 +134,14 @@
   scroll-behavior: smooth;
   width: 100vw;
   color: #121214;
+  align-items: center;
 }
 
 .home--search {
   display: flex;
   justify-content: center;
   height: 343px;
-  
+
   img {
     object-fit: cover;
     width: 100vw;
@@ -105,7 +159,7 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  margin-top: 1%;
+  margin-top: 3%;
   width: 60%;
 }
 
@@ -115,7 +169,6 @@
   align-items: center;
   background-color: #fff;
   padding: 3px;
-  width: 100%;
   min-height: 56px;
   height: fit-content;
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 14%);
@@ -195,9 +248,9 @@
   }
 }
 
-input:focus{
+input:focus {
   outline: none;
-  placeholder{
+  placeholder {
     display: none;
   }
 }
@@ -220,11 +273,9 @@ input:focus{
   display: flex;
   flex-direction: column;
   margin-top: 40px;
-  gap: 16px;
   margin-bottom: 16px;
   p1 {
     font-family: RlFreight, HoeflerText-Black, Times New Roman, serif;
-    font-size: 90px;
     font-weight: 900;
     letter-spacing: -1px;
     line-height: 90px;
@@ -234,7 +285,6 @@ input:focus{
 
   p2 {
     font-family: RlBasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
-    font-size: 32px;
     font-weight: 900;
     letter-spacing: -0.2px;
     line-height: 32px;
@@ -248,7 +298,6 @@ input:focus{
   align-items: center;
   justify-content: center;
   margin-top: 60px;
-  margin-bottom: 60px;
 }
 
 .make--components {
@@ -344,6 +393,8 @@ input:focus{
   align-items: center;
   justify-content: center;
   position: relative;
+  margin-bottom: 45px;
+  margin-top: 20px;
 
   .contents {
     position: absolute;
@@ -355,7 +406,6 @@ input:focus{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 250px;
     margin-bottom: 16px;
 
     .chtext {
@@ -366,7 +416,7 @@ input:focus{
     }
   }
 
-  p1{
+  p1 {
     font-size: 28px;
     text-decoration: none;
     color: #593cfb;
@@ -375,7 +425,7 @@ input:focus{
     text-align: center;
   }
 
-  p2{
+  p2 {
     color: #121214;
     font-size: 16px;
     margin-top: 8px;
@@ -386,7 +436,6 @@ input:focus{
 }
 
 .book--car {
-  margin-left: -100%;
   .chtext {
     margin-top: 40%;
   }
@@ -396,7 +445,6 @@ input:focus{
   .chtext {
     margin-top: 20%;
   }
-  margin-left: 80%;
   margin-top: 10%;
 }
 
