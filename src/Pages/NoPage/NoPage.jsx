@@ -3,7 +3,7 @@ import "./NoPage.css";
 
 function NoPage() {
   return (
-    <div><p>No page error</p></div>
+    <div className='ghjjkl'><p>Check link</p></div>
   )
 }
 
