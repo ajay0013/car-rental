@@ -1,10 +1,9 @@
 import React from "react";
-import { Link, Router } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 export default function Navbar() {
 
-  const link = [{link:"./Random"}]
   return (
     <header className="navbar">
       <div className="navbar--contents">

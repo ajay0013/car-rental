@@ -27,6 +27,9 @@
   line-height: 26px;
   display: flex;
   flex-direction: row;
+  justify-content: left;
+  text-align: left;
+  width: 100%;
   gap: 5px;
 }
 
@@ -35,6 +38,8 @@
 }
 
 .rent{
+  width: 90%;
+  text-align: left;
   span{
     display: flex;
     flex-direction: row;

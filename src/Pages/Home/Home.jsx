@@ -30,7 +30,7 @@ export default function Home() {
 
         <div className="search--container">
           <div className="search--home">
-            <form className="search" autoComplete="off">
+            <form className="searchee" autoComplete="off">
               <div className="location">
                 <div className="where">Where</div>
                 <input
@@ -45,7 +45,7 @@ export default function Home() {
                   <input placeholder="date--from"></input>
                 </div>
 
-                <div className="from">
+                <div className="to">
                   <p>Until</p>
                   <input placeholder="date--to"></input>
                 </div>
