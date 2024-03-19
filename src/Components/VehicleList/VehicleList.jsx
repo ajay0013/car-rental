@@ -5,14 +5,12 @@ import { useState } from "react";
 
 import { Dialog, Transition } from "@headlessui/react";
 
-import vc from "../../Assets/vcfront.png"
+import vc from "../../Assets/vcfront.png";
 import close from "../../Assets/close.png";
-
 
 export default function VehicleList(props) {
   const rent = calculateRent(props.city_mpg, props.year);
-  const[isOpen, setIsOpen] = useState(false);
-
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="car-card">
@@ -29,7 +27,7 @@ export default function VehicleList(props) {
         </div>
 
         <div className="car-image">
-          <img src={vc} alt="vehicle list"/>
+          <img src={vc} alt="vehicle list" />
         </div>
 
         <div className="mfeature">
@@ -116,8 +114,11 @@ export default function VehicleList(props) {
           </button>
         </div>
 
-        <CarDetails props={props} isOpen={isOpen}  closeModal={() => setIsOpen(false)} />
-        
+        <CarDetails
+          props={props}
+          isOpen={isOpen}
+          closeModal={() => setIsOpen(false)}
+        />
       </div>
     </div>
   );
@@ -136,100 +137,120 @@ const calculateRent = (city_mpg, year) => {
   return rentalDay.toFixed(0);
 };
 
+const CarDetails = ({ props, isOpen, closeModal }) => {
+  return (
+    <>
+      <Transition show={isOpen}>
+        <Dialog className="dialog" onClose={closeModal}>
+          <Transition.Child
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="dikh" />
+          </Transition.Child>
 
-const CarDetails = ({props, isOpen, closeModal}) => {
-
-    return(
-        <>
-        <Transition show={isOpen}>
-            <Dialog className="dialog" onClose={closeModal}>
-                <Transition.Child enter="ease-out duration-300" enterFrom="opacity-0" enterTo="opacity-100" 
-                                  leave="ease-in duration-200" leaveFrom="opacity-100" leaveTo="opacity-0"> 
-                    <div className="dikh"/>
-                </Transition.Child>
-
-                <div className="details"  onClick={closeModal} /**dialog ke bahar click krne pe band hoga */>
-                    <div className="details-content">
-                    <Transition.Child enter="ease-out duration-300" enterFrom="opacity-0 scale-95" enterTo="opacity-100 scale-100" 
-                                  leave="ease-in duration-200" leaveFrom="opacity-100 scale-100" leaveTo="opacity-0 scale-95">
-                    
-
-                        <div className="full-details" onClick={e => {e.stopPropagation();}}/**dialogue ke andar click krne pe band nhi hoga */>
-                            <div className="full-contents">
-                                <div className="close">
-                                    <button onClick={closeModal}>
-                                        <img src={close} alt="vehicle list"/>
-                                    </button>
-                                </div>
-                                <div className="car-1">
-                                    <img src={vc} alt="lambi" />
-                                </div>
-                                <div className="car-234">
-                                    <img src={vc} alt="choti"/>
-                                    <img src={vc} alt="choti"/>
-                                    <img src={vc} alt="choti"/>
-                                </div>
-                                <div className="fname">
-                                    <p>{props.make} {props.model}</p>
-                                </div>
-
-                                <div className="cimpg" id="specs">
-                                    <p1>City Mpg</p1>
-                                    <p2>{props.city_mpg}</p2>
-                                </div>
-                                <div className="class" id="specs">
-                                    <p1>Class</p1>
-                                    <p2>{props.class}</p2>
-                                </div>
-                                <div className="compg" id="specs">
-                                    <p1>Combination Mpg</p1>
-                                    <p2>{props.combination_mpg}</p2>
-                                </div>
-                                <div className="cylinders" id="specs">
-                                    <p1>Cylinders</p1>
-                                    <p2>{props.cylinders}</p2>
-                                </div>
-                                <div className="displace" id="specs">
-                                    <p1>Displacemnet</p1>
-                                    <p2>{props.displacement}</p2>
-                                </div>
-                                <div className="drive" id="specs">
-                                    <p1>Drive</p1>
-                                    {props.drive === "awd" ? <p2>AWD</p2> : <p2>RWD</p2>}
-                                </div>
-                                <div className="fuel" id="specs">
-                                    <p1>Fuel Type</p1>
-                                    <p2>{props.fuel_type}</p2>
-                                </div>
-                                <div className="himpg" id="specs">
-                                    <p1>Highway Mpg</p1>
-                                    <p2>{props.highway_mpg}</p2>
-                                </div>
-                                <div className="make" id="specs">
-                                    <p1>Make</p1>
-                                    <p2>{props.make}</p2>
-                                </div>
-                                <div className="model" id="specs">
-                                    <p1>Model</p1>
-                                    <p2>{props.model}</p2>
-                                </div>
-                                <div className="trans" id="specs">
-                                    <p1>Transmission</p1>
-                                    {props.transmission === "a" ? <p2>Automatic</p2> : <p2>Manual</p2>}
-                                </div>
-                                <div className="year" id="specs">
-                                    <p1>Year</p1>
-                                    <p2>{props.year}</p2>
-                                </div>
-
-                            </div>
-                        </div>
-                    </Transition.Child>  
+          <div
+            className="details"
+            onClick={closeModal} /**dialog ke bahar click krne pe band hoga */
+          >
+            <div className="details-content">
+              <Transition.Child
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 scale-95"
+                enterTo="opacity-100 scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 scale-100"
+                leaveTo="opacity-0 scale-95"
+              >
+                <div
+                  className="full-details"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                  }} /**dialogue ke andar click krne pe band nhi hoga */
+                >
+                  <div className="full-contents">
+                    <div className="close">
+                      <button onClick={closeModal}>
+                        <img src={close} alt="vehicle list" />
+                      </button>
+                    </div>
+                    <div className="car-1">
+                      <img src={vc} alt="lambi" />
+                    </div>
+                    <div className="car-234">
+                      <img src={vc} alt="choti" />
+                      <img src={vc} alt="choti" />
+                      <img src={vc} alt="choti" />
+                    </div>
+                    <div className="fname">
+                      <p>
+                        {props.make} {props.model}
+                      </p>
                     </div>
 
+                    <div className="cimpg" id="specs">
+                      <p1>City Mpg</p1>
+                      <p2>{props.city_mpg}</p2>
+                    </div>
+                    <div className="class" id="specs">
+                      <p1>Class</p1>
+                      <p2>{props.class}</p2>
+                    </div>
+                    <div className="compg" id="specs">
+                      <p1>Combination Mpg</p1>
+                      <p2>{props.combination_mpg}</p2>
+                    </div>
+                    <div className="cylinders" id="specs">
+                      <p1>Cylinders</p1>
+                      <p2>{props.cylinders}</p2>
+                    </div>
+                    <div className="displace" id="specs">
+                      <p1>Displacemnet</p1>
+                      <p2>{props.displacement}</p2>
+                    </div>
+                    <div className="drive" id="specs">
+                      <p1>Drive</p1>
+                      {props.drive === "awd" ? <p2>AWD</p2> : <p2>RWD</p2>}
+                    </div>
+                    <div className="fuel" id="specs">
+                      <p1>Fuel Type</p1>
+                      <p2>{props.fuel_type}</p2>
+                    </div>
+                    <div className="himpg" id="specs">
+                      <p1>Highway Mpg</p1>
+                      <p2>{props.highway_mpg}</p2>
+                    </div>
+                    <div className="make" id="specs">
+                      <p1>Make</p1>
+                      <p2>{props.make}</p2>
+                    </div>
+                    <div className="model" id="specs">
+                      <p1>Model</p1>
+                      <p2>{props.model}</p2>
+                    </div>
+                    <div className="trans" id="specs">
+                      <p1>Transmission</p1>
+                      {props.transmission === "a" ? (
+                        <p2>Automatic</p2>
+                      ) : (
+                        <p2>Manual</p2>
+                      )}
+                    </div>
+                    <div className="year" id="specs">
+                      <p1>Year</p1>
+                      <p2>{props.year}</p2>
+                    </div>
+                  </div>
                 </div>
-            </Dialog>
-        </Transition>
-        </>
-    )
-}
+              </Transition.Child>
+            </div>
+          </div>
+        </Dialog>
+      </Transition>
+    </>
+  );
+};
