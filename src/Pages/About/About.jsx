@@ -8,7 +8,6 @@ import repair from "../../Assets/repair-tool.png";
 import abt from "../../Assets/abt-turo.jpeg";
 import meetteam from "../../Assets/meet-the-team.png";
 import touch from "../../Assets/touch.jpg";
-import call from "../../Assets/phone-call.png";
 
 export default function About() {
   return (
@@ -16,7 +15,7 @@ export default function About() {
       <div className="about-contents">
         <div className="abt-turo">
           <div className="car-img">
-            <img src={abt} alt="about ki image" />
+            <img src={abt} alt="about ki " />
           </div>
 
           <div className="text">
@@ -103,13 +102,13 @@ export default function About() {
               </p2>
 
               <Link to="/team" className="ghgh">
-              <button>
-                <p>Meet the team</p>
-              </button>
+                <button>
+                  <p>Meet the team</p>
+                </button>
               </Link>
             </div>
 
-            <div className="3cars">
+            <div className="threecars">
               <img src={meetteam} alt="team meet ka imahe" />
             </div>
           </div>

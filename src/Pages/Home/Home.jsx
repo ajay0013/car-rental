@@ -13,13 +13,11 @@ import BbInterPlaceData from "./BbInterPlaceData";
 import Bbexperiencedata from "./Bbexperiencedata";
 
 export default function Home() {
-
   const scrollRef = useRef(null);
 
   const scroll = (scrollOffset) => {
     scrollRef.current.scrollLeft += scrollOffset;
   };
-
 
   return (
     <div className="home--page">
@@ -53,7 +51,7 @@ export default function Home() {
 
               <div className="search--btn">
                 <Link to="/vehicles">
-                <button className="search--submit"></button>
+                  <button className="search--submit"></button>
                 </Link>
               </div>
             </form>
@@ -114,7 +112,9 @@ export default function Home() {
               </button>
             </div>
           </div>
-          <div className="make--body" ref={scrollRef} >{BbmakeData.map(createCardsMake)}</div>
+          <div className="make--body" ref={scrollRef}>
+            {BbmakeData.map(createCardsMake)}
+          </div>
         </div>
       </div>
 
@@ -298,11 +298,11 @@ export default function Home() {
             ></path>
           </svg>
         </div>
-        <div className="contents">
+        <div className="conte nts">
           <div className="book--car">
             <div className="chtext">
               <Link to="/vehicles">
-              <p1>Book a car &gt;</p1>
+                <p1>Book a car &gt;</p1>
               </Link>
               <p2>
                 Down the street or across the country, find the perfect vehicle
@@ -313,7 +313,7 @@ export default function Home() {
           <div className="become--host">
             <div className="chtext">
               <Link to="/contact">
-              <p1>Become a host &gt;</p1>
+                <p1>Become a host &gt;</p1>
               </Link>
               <p2>
                 Accelerate your entrepreneurship and start building a small car
