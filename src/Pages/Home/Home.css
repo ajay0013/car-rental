@@ -52,19 +52,12 @@
     margin-bottom: 18px;
   }
 
-  .book--car,
-  .become--host {
-    width: 185px;
-    margin-left: 0;
-  }
 
-  .bg {
-    opacity: 0;
-  }
 
   .car--host {
+    margin-top: 0;
+    position: relative;
     border-radius: 8px;
-    background-color: #f0f0f0;
   }
 }
 
@@ -121,9 +114,6 @@
   .become--host {
     margin-left: 80%;
   }
-  .bg {
-    opacity: 1;
-  }
 }
 
 .home--page {
@@ -136,6 +126,14 @@
   color: #121214;
   align-items: center;
 }
+
+.book--car,
+.become--host {
+  width: 185px;
+  margin-left: 0;
+}
+
+
 
 .home--search {
   display: flex;
@@ -394,7 +392,6 @@ input:focus {
   justify-content: center;
   position: relative;
   margin-bottom: 45px;
-  margin-top: 20px;
 
   .contents {
     position: absolute;

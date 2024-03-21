@@ -18,6 +18,13 @@ export default function Footer() {
     d7: false,
   });
 
+  const toggleDrop = (d) => {
+    setDrop((prevStates) => ({
+      ...prevStates,
+      [d]: !prevStates[d],
+    }));
+  };
+
   return (
     <footer className="footer">
       <div className="footer--content">
@@ -378,7 +385,7 @@ export default function Footer() {
             <ol>
               <li>
                 <a href="https://itunes.apple.com/app/relayrides/id555063314?mt=8&ls=1">
-                  <img src={playstore} alt="playstore" />
+                  <img src={playstore} loading="lazy" alt="playstore" />
                 </a>
               </li>
               <li>
@@ -417,8 +424,7 @@ export default function Footer() {
             <div className="dtturo" id="df">
               <div className="dthead" id="head">
                 <p>Turo</p>
-                <button>
-                  {" "}
+                <button onClick={() => toggleDrop("d1")}>
                   <img src={drop.d1 ? up : down} alt="upar-niche" />{" "}
                 </button>
               </div>
@@ -442,7 +448,7 @@ export default function Footer() {
             <div className="dlloca" id="df">
               <div className="dlhead" id="head">
                 <p>Locations</p>
-                <button>
+                <button onClick={() => toggleDrop("d2")}>
                   <img src={drop.d2 ? up : down} alt="upar-niche" />
                 </button>
               </div>
@@ -465,7 +471,7 @@ export default function Footer() {
             <div className="deexplore" id="df">
               <div className="dehead" id="head">
                 <p>Explore</p>
-                <button>
+                <button onClick={() => toggleDrop("d3")}>
                   <img src={drop.d3 ? up : down} alt="upar-niche" />
                 </button>
               </div>
@@ -486,7 +492,7 @@ export default function Footer() {
             <div className="dhhosting" id="df">
               <div className="dhhead" id="head">
                 <p>Hosting</p>
-                <button>
+                <button onClick={() => toggleDrop("d4")}>
                   <img src={drop.d4 ? up : down} alt="upar-niche" />
                 </button>
               </div>
@@ -508,7 +514,7 @@ export default function Footer() {
             <div className="dvtypes" id="df">
               <div className="dvhead" id="head">
                 <p>Vehicle types</p>
-                <button>
+                <button onClick={() => toggleDrop("d5")}>
                   <img src={drop.d5 ? up : down} alt="upar-niche" />
                 </button>
               </div>
@@ -535,7 +541,7 @@ export default function Footer() {
             <div className="dmmake" id="df">
               <div className="dmmake" id="head">
                 <p>Makes</p>
-                <button>
+                <button onClick={() => toggleDrop("d6")}>
                   <img src={drop.d6 ? up : down} alt="upar-niche" />
                 </button>
               </div>
@@ -562,7 +568,7 @@ export default function Footer() {
             <div className="dccities" id="df">
               <div className="dchead" id="head">
                 <p>Cities</p>
-                <button>
+                <button onClick={() => toggleDrop("d7")}>
                   <img src={drop.d7 ? up : down} alt="upar-niche" />
                 </button>
               </div>

@@ -281,23 +281,6 @@ export default function Home() {
       </div>
 
       <div className="car--host">
-        <div className="bg">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            data-name="Layer 1"
-            viewBox="0 0 846 484"
-            class="e1u4lv874 seo-pages-xjn11h"
-            height="484px"
-            role="img"
-            version="1.1"
-            width="846px"
-          >
-            <path
-              fill="#fbf9f6"
-              d="M265.58 51.77c64.29 18 127.35 41.95 193.12 51.72 72.43 10.75 147.75 4.31 217.09 29.3 80.49 29 199.52 135.19 162.35 239.88-20.41 57.47-85.21 82.21-136.2 95.7-61.13 16.16-125.2 16.23-187.48 9.1-68.73-7.86-136.84-40.12-198.13-73-61.57-33.05-132.45-33-198-51.4-23-6.45-45.88-15.36-65-30.59C-7.58 274.05-13.93 154.9 27.71 91c20.47-31.42 54.87-50 90-56.26s71.2-1.39 106.08 6.43a760.59 760.59 0 0 1 41.79 10.6z"
-            ></path>
-          </svg>
-        </div>
         <div className="conte nts">
           <div className="book--car">
             <div className="chtext">
