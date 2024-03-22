@@ -6,29 +6,40 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import "./Vehicles.css";
-
 import VehicleList from "../../Components/VehicleList/VehicleList";
-
+import Loader from "../../Components/Loader/Loader";
 import end from "../../Assets/the-end.png";
 
 export default function Vehicles(carData) {
-  useEffect(() => {
-    window.scrollTo(1000, 1000)
-  }, [])
-    const [carLoading, setCarLoading] = useState(false);
-    const [carError, setCarError] = useState();
-    const [allCars, setAllCars] = useState([]);
-    const [age, setAge] = React.useState("");
-    const [price, setPrice] = React.useState("");
-    
-    const handleChange = (event) => {
-      setAge(event.target.value);
-    };
+  const [carLoading, setCarLoading] = useState(false);
+  const [carError, setCarError] = useState();
+  const [allCars, setAllCars] = useState([]);
+  const [age, setAge] = React.useState("");
+  const [price, setPrice] = React.useState("");
+  const [carModels, setCarModels] = useState([]);
 
-    const handleChange1 = (event) => {
-        setPrice(event.target.value);
-    };
+  const [searchFilter, setSearchFilter] = useState({
+    model: "",
+    make: "",
+    year: "",
+  });
 
+  const handleSearchFilterChange = (field, value) => {
+    console.log(value);
+    setSearchFilter((prev) => ({
+      ...prev,
+      [field]: value,
+      ...(field === "make" && { model: "" }),
+    }));
+  };
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
+
+  const handleChange1 = (event) => {
+    setPrice(event.target.value);
+  };
 
   useEffect(() => {
     const fetchCars = async () => {
@@ -41,12 +52,16 @@ export default function Vehicles(carData) {
 
       try {
         const response = await fetch(
-          "https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?min_comb_mpg=1&limit=26",
+          `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=${
+            searchFilter.model ? searchFilter.model : ""
+          }&make=${
+            searchFilter.make ? searchFilter.make : ""
+          }&min_comb_mpg=1&limit=26`,
           { headers: headers }
         );
         const cars = await response.json();
         setAllCars(cars);
-        console.log(cars);
+        setCarModels(cars);
       } catch (error) {
         setCarError(error);
       } finally {
@@ -55,13 +70,13 @@ export default function Vehicles(carData) {
     };
 
     fetchCars();
+  }, [searchFilter]);
+
+  createCarCards(carModels);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
   }, []);
-
-  createCarCards(allCars);
-
-  if (carLoading) {
-    return <div>Loading...</div>;
-  }
 
   if (carError) {
     return <div>Error -&gt; {carError}. Please reeload.</div>;
@@ -83,22 +98,53 @@ export default function Vehicles(carData) {
                 id="combo-box-demo"
                 options={manufacturers}
                 sx={{ width: 200 }}
+                onChange={(e, value) => {
+                  handleSearchFilterChange("make", value);
+                }}
                 renderInput={(params) => (
                   <TextField {...params} label="Company" />
                 )}
               />
             </div>
-            <div className="model">
-              <Autocomplete
-                disablePortal
-                id="combo-box-demo"
-                options={manufacturers}
-                sx={{ width: 200 }}
-                renderInput={(params) => (
-                  <TextField {...params} label="Model" />
-                )}
-              />
-            </div>
+            {searchFilter.make && (
+              <div className="model">
+                {/* <Autocomplete
+                  disablePortal
+                  id="combo-box-demo"
+                  sx={{ width: 200 }}
+                  options={carModels}
+                  getOptionLabel={(option) => option.model}
+                  onChange={(e, value) => {
+                    handleSearchFilterChange("model", value.model);
+                    console.log(value.model);
+                  }}
+                  renderInput={(params) => (
+                    <TextField {...params} label="Model" />
+                  )}
+                /> */}
+
+                <Box sx={{ width: 200 }}>
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">Model</InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      label="Model"
+                      value={carModels.model}
+                      onChange={(e, value) => {
+                        handleSearchFilterChange("model", value.props.value);
+                      }}
+                    >
+                      {carModels.map((arr) => (
+                        <MenuItem key={arr.model} value={arr.model}>
+                          {arr.model}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </FormControl>
+                </Box>
+              </div>
+            )}
           </div>
 
           <div className="filters">
@@ -124,7 +170,7 @@ export default function Vehicles(carData) {
             </div>
 
             <div className="fprice">
-            <Box sx={{ width: 100 }}>
+              <Box sx={{ width: 100 }}>
                 <FormControl fullWidth>
                   <InputLabel id="demo-simple-select-label">Price</InputLabel>
                   <Select
@@ -146,13 +192,20 @@ export default function Vehicles(carData) {
           </div>
         </div>
         <div className="carsShow">
+          {carLoading && <div className="lld">
+
+          </div>
+          }
           <div className="carsContent">{allCars.map(createCarCards)}</div>
         </div>
 
         <div className="the-end">
-            <img src={end} alt="end of vehicle list"/>
-            <p1>No more cars available</p1>
-            <p2>Try changing your filters, adjusting your dates, or exploring other options</p2>
+          <img src={end} alt="end of vehicle list" />
+          <p1>No more cars available</p1>
+          <p2>
+            Try changing your filters, adjusting your dates, or exploring other
+            options
+          </p2>
         </div>
       </div>
     </div>
@@ -257,10 +310,4 @@ const aggge = [
   "2024",
 ];
 
-const priceee = [
-    "$40-60",
-    "$60-80",
-    "$80-100",
-    "$100-150",
-    "$150+",
-];
+const priceee = ["$40-60", "$60-80", "$80-100", "$100-150", "$150+"];
