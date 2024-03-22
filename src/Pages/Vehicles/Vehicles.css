@@ -25,6 +25,15 @@
 
 }
 
+.lld{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  font-weight: 700;
+  color: red;
+}
+
 .carsShow {
   display: flex;
   justify-content: center;

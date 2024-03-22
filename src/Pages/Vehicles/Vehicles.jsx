@@ -7,8 +7,8 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import "./Vehicles.css";
 import VehicleList from "../../Components/VehicleList/VehicleList";
-import Loader from "../../Components/Loader/Loader";
 import end from "../../Assets/the-end.png";
+import { all } from "axios";
 
 export default function Vehicles(carData) {
   const [carLoading, setCarLoading] = useState(false);
@@ -61,7 +61,6 @@ export default function Vehicles(carData) {
         );
         const cars = await response.json();
         setAllCars(cars);
-        setCarModels(cars);
       } catch (error) {
         setCarError(error);
       } finally {
@@ -73,6 +72,36 @@ export default function Vehicles(carData) {
   }, [searchFilter]);
 
   createCarCards(carModels);
+
+  useEffect(() => {
+    const fetchCars = async () => {
+      const headers = {
+        "X-RapidAPI-Key": "d484e7dbdfmsh4f4d37d25f8b4d4p18c009jsnd8a4083ee2e3",
+        "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com",
+      };
+
+      setCarLoading(true);
+
+      try {
+        const response = await fetch(
+          `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=${
+            searchFilter.model ? searchFilter.model : ""
+          }&make=${
+            searchFilter.make ? searchFilter.make : ""
+          }&min_comb_mpg=1&limit=26`,
+          { headers: headers }
+        );
+        const cars = await response.json();
+        setCarModels(cars);
+      } catch (error) {
+        setCarError(error);
+      } finally {
+        setCarLoading(false);
+      }
+    };
+
+    fetchCars();
+  }, [searchFilter.make]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -192,10 +221,7 @@ export default function Vehicles(carData) {
           </div>
         </div>
         <div className="carsShow">
-          {carLoading && <div className="lld">
-
-          </div>
-          }
+          {carLoading && <div className="lld"> <p>Loading...</p> </div>}
           <div className="carsContent">{allCars.map(createCarCards)}</div>
         </div>
 
